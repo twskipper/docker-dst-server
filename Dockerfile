@@ -42,6 +42,9 @@ RUN mkdir -p /opt/dst_server \
 COPY dst_default_config /opt/dst_default_config/
 RUN chown -R dst:dst /opt/dst_default_config
 
+# install fileUpdater
+RUN wget https://github.com/GoSome/fileUpdater/releases/download/v0.2/fileupdater-amd64-linux
+RUN chmod +x fileupdater-amd64-linux
 VOLUME [ "/data" ]
 
 EXPOSE 10999-11000/udp 12346-12347/udp
